@@ -1,0 +1,50 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <label for="id">Atm Id</label>
+        <input type="text" [(ngModel)]="atm.id"
+               class="form-control"
+               id="id"
+               name="id"
+               placeholder="Enter atm's id"
+               required #name="ngModel">
+      </div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Id is required</div>
+      <div class="form-group">
+        <label for="note100">Note 100</label>
+        <input type="number" [(ngModel)]="atm.note100"
+               value="0"
+               min="0"
+               class="form-control"
+               id="note100"
+               name="note100"
+               placeholder="Enter number of 100 notes"
+        >
+      </div>
+      <div class="form-group">
+        <label for="note200">Note 200</label>
+        <input type="number" [(ngModel)]="atm.note200"
+               value="0"
+               min="0"
+               class="form-control"
+               id="note200"
+               name="note200"
+               placeholder="Enter number of 200 notes"
+        >
+      </div>
+      <div class="form-group">
+        <label for="note500">Note 500</label>
+        <input type="number" [(ngModel)]="atm.note500"
+               value="0"
+               min="0"
+               class="form-control"
+               id="note500"
+               name="note500"
+               placeholder="Enter number of 500 notes"
+        >
+      </div>
+      <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

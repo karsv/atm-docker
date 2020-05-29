@@ -1,0 +1,11 @@
+<div class="container">
+  <form (ngSubmit)="checkLogin()" #userForm="ngForm">
+    <div>
+      User Name : <input type="text" name="name" [(ngModel)]="userRequest.name">
+      Password : <input type="password" name="password" [(ngModel)]="userRequest.password">
+    </div>
+    <button type="submit" class="btn btn-info">
+      Login
+    </button>
+  </form>
+</div>

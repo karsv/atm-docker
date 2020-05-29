@@ -1,0 +1,12 @@
+version: '3'
+services:
+  atm-front:
+    build: atm-front/.
+    ports:
+      - "4200:4200"
+    depends_on:
+      - atm-rest
+  atm-rest:
+    build: atm-rest/.
+    ports:
+      - "8081:8081"

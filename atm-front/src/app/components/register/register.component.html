@@ -1,0 +1,15 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <div class="alert alert-danger" role="alert" *ngIf="error">{{ error }}</div>
+    <div class="field">
+      User Name : <input type="text" name="name" [(ngModel)]="userRequest.name"></div>
+    <div class="field">
+      Password : <input type="password" name="password" [(ngModel)]="userRequest.password"></div>
+    <div class="field">
+      Repeat Password : <input type="password" name="password" [(ngModel)]="userRequest.repeatPassword">
+    </div>
+    <button type="submit" class="btn btn-info">
+      Register
+    </button>
+  </form>
+</div>
