@@ -17,13 +17,7 @@ export class AccountStatusComponent implements OnInit {
 
   ngOnInit(): void {
     this.accountService.getAccount().subscribe(result => {
-<<<<<<< HEAD
         this.accounts = result;
-=======
-        this.account = new AccountResponse();
-        this.account.money = result.money;
-        this.account.cardNumber = result.cardNumber;
->>>>>>> origin/master
       },
       err => {
         console.log(err.message);
