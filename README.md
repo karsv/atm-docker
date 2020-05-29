@@ -8,7 +8,7 @@ Back-end part: springboot, spring jpa, java 11, h2, spring security, Mockito, JU
 http://localhost:4200/login
 
 #### For start project: 
-
+Run next command from main directory:
 > sudo docker-compose up --build
 
 #####Here implemented basic logic of ATM: 
