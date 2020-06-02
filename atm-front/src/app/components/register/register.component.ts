@@ -11,6 +11,7 @@ import {RegistrationRequest} from '../../model/registrationRequest/registration-
 export class RegisterComponent implements OnInit {
   userRequest: RegistrationRequest;
   error: string;
+  warn: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -27,7 +28,10 @@ export class RegisterComponent implements OnInit {
     } else {
       this.loginservice.register(this.userRequest).subscribe(
         res => {
-          this.router.navigate(['/login']);
+          this.warn = 'Registration successful! You will immediately redirect to login!';
+          setTimeout(() => {
+            this.router.navigate(['/login']);
+          }, 3000);
         },
         errorRes => {
           this.error = errorRes.error.message;

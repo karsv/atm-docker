@@ -33,7 +33,7 @@ import {RegisterComponent} from './components/register/register.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [AtmService, {
     provide: HTTP_INTERCEPTORS, useClass: BasicAuthHttpInterceptorService, multi: true

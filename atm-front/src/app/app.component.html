@@ -5,7 +5,8 @@
         <div class="card-body">
           <ul class="text-center list-inline py-3">
             <li class="list-inline-item">
-              <a *ngIf="auth.isUserLoggedIn() && auth.userRole()=='ADMIN'" routerLink="/atms" class="btn btn-info">List
+              <a *ngIf="auth.isUserLoggedIn() && ( auth.userRole()=='ADMIN' || auth.userRole()=='USER')"
+                 routerLink="/atms" class="btn btn-info">List
                 Atms</a>
             </li>
             <li class="list-inline-item">

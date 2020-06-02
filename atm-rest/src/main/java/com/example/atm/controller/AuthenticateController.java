@@ -9,9 +9,13 @@ import com.example.atm.service.AuthenticateService;
 import javax.naming.AuthenticationException;
 import javax.validation.Valid;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -42,4 +46,10 @@ public class AuthenticateController {
                 .orElseThrow(() -> new AuthenticateException());
     }
 
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public AuthenticateException validationError(MethodArgumentNotValidException exception) {
+        String message = exception.getBindingResult().getFieldErrors().get(1).getDefaultMessage();
+        return new AuthenticateException(message);
+    }
 }

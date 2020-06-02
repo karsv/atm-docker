@@ -1,11 +1,17 @@
 <div class="container">
   <form (ngSubmit)="checkLogin()" #userForm="ngForm">
-    <div>
-      User Name : <input type="text" name="name" [(ngModel)]="userRequest.name">
-      Password : <input type="password" name="password" [(ngModel)]="userRequest.password">
+    <div class="field">
+      <label> User Name : </label>
+      <input type="text" name="name" [(ngModel)]="userRequest.name">
     </div>
-    <button type="submit" class="btn btn-info">
-      Login
-    </button>
+    <div class="field">
+      <label> Password : </label>
+      <input type="password" name="password" [(ngModel)]="userRequest.password">
+    </div>
+    <div class="field">
+      <button type="submit" class="btn btn-info xl-size">
+        Login
+      </button>
+    </div>
   </form>
 </div>
