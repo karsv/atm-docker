@@ -1,17 +1,17 @@
 # ATM
 
-####Stack: 
+#### Stack: 
 Front-end part: Angular, HTMl, CSS, TypeScript, BootStrap;
 Back-end part: springboot, spring jpa, java 11, h2, spring security, Mockito, JUnit, log4j2, Lombok;
 
-####Starter page: 
+#### Starter page: 
 http://localhost:4200/login
 
 #### For start project: 
 Run next command from main directory:
 > sudo docker-compose up --build
 
-#####Here implemented basic logic of ATM: 
+##### Here implemented basic logic of ATM: 
 - refill ATM; _(ADMIN)_
 - transfer money from one account to another account; _(USER)_
 - put money on the account; _(USER)_
@@ -21,7 +21,7 @@ Run next command from main directory:
 
 In this project realised Basic authentication with two roles (ADMIN, USER). 
 
-#####When this project starts it initialised with next parameters:
+##### When this project starts it initialised with next parameters:
 1. ADMIN
 login: admin
 password: 123
